@@ -7,24 +7,27 @@
 # 4. compare that array to the same array reversed
 # 5. return that boolean
 
-def palindromic_number?(number)
-  digits = number.digits
-  digits == digits.reverse
+# def palindromic_number?(number)
+#   digits = number.digits
+#   digits == digits.reverse
+# end
+
+#start of further exploration;
+def palindrome?(string)
+   string.reverse == string
 end
 
-
-# def palindrome?(string)
-#   string.reverse == string
-# end
-
-# def palindromic_number?(number)
-#   palindrome?(number.to_s)
-# end
+def palindromic_number?(number)
+  number
+  p number
+  palindrome?(number.to_s)
+ end
 
 
-p palindromic_number?(34543) == true
-p palindromic_number?(123210) == false
-p palindromic_number?(22) == true
-p palindromic_number?(5) == true
+# p palindromic_number?(34543) == true
+# p palindromic_number?(123210) == false
+# p palindromic_number?(22) == true
+# p palindromic_number?(5) == true
+p palindromic_number?(0005000) == true
 
 
