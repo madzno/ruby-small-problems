@@ -1,18 +1,19 @@
 =begin
-##Problem
+Read Problem Outloud
 
-Input;
-Output;
+Input:
+Output:
 
 Explicit rules;
-Implicit rules;
+
+Implicit rules:
 
 Clarifying Questions
 
-##Examples/Test Cases
+Examples/Test Cases
 
-##Data Structure
+Data Structure
 
-##Algo
+Algo
 
 =end
