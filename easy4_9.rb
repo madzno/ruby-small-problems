@@ -25,7 +25,6 @@ Algorithm
 4. iterate through the digits array and transform each digit into its string counterparts
 6. join the digits array and return
 =end
-
 def integer_to_string(integer)
   digits = integer.digits.reverse
   digits_hash = {
@@ -40,12 +39,12 @@ def integer_to_string(integer)
     8 => '8',
     9 => '9'
   }
-  digits.map! do |digit|
+  digits.map! do |digits|
     digit = digits_hash[digit]
   end
   digits.join
 end
 
-p integer_to_string(4321) == '4321'
-p integer_to_string(0) == '0'
-p integer_to_string(5000) == '5000'
+integer_to_string(4321) == '4321'
+#p integer_to_string(0) == '0'
+#p integer_to_string(5000) == '5000'
