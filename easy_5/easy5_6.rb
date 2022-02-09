@@ -30,15 +30,16 @@ equal to a space, delete that element destructively
 
 def cleanup(string)
   characters = string.chars
-  characters.each_with_index do |character, index|
-    characters[index] = ' ' if ('a'..'z').include?(character) == false
-  end
-  characters
-  characters.each_with_index do |character, index|
-    if index > 1 && character[index] == ' ' && character[index - 1] == ' '
-      characters.delete(character)
+  clean_chars = []
+
+  characters.each do |character|
+    if ('a'..'z').to_a.include?(character)
+      clean_chars << character
+    else
+      clean_chars << ' ' unless clean_chars.last == ' '
     end
   end
+  clean_chars.join
 end
 
-p cleanup("---what's my +*& line?") #== ' what s my line '
+p cleanup("---what's my +*& line?") == ' what s my line '
