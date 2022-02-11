@@ -41,22 +41,25 @@ def word_sizes(string)
   character_counts = []
   values = []
   words_array = string.split
+
   return result_hash if string.split.empty?
+
   words_array.each do |word|
     character_counts << word.chars.count
   end
-  character_counts.uniq.each do |integer|
-    result_hash[integer] = 1
+
+  character_counts.uniq.sort.each do |integer|
+    result_hash[integer] = 0
   end
-  words_array.each_with_index do |word, index|
-    if (words_array[0].size..words_array[-1].size).include?(words_array[index].size)
-      result_hash[words_array[index].size] += 1
-    end
+
+  words_array.each do |word|
+      result_hash[word.size] += 1
   end
+
   result_hash
 end
 
-p word_sizes('Four score and seven.') #== { 3 => 1, 4 => 1, 5 => 1, 6 => 1 }
-p word_sizes('Hey diddle diddle, the cat and the fiddle!') #== { 3 => 5, 6 => 1, 7 => 2 }
-p word_sizes("What's up doc?") #== { 6 => 1, 2 => 1, 4 => 1 }
-p word_sizes('') #== {}
+p word_sizes('Four score and seven.') == { 3 => 1, 4 => 1, 5 => 1, 6 => 1 }
+p word_sizes('Hey diddle diddle, the cat and the fiddle!') == { 3 => 5, 6 => 1, 7 => 2 }
+p word_sizes("What's up doc?") == { 6 => 1, 2 => 1, 4 => 1 }
+p word_sizes('') == {}
