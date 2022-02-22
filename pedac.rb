@@ -4,13 +4,11 @@ Read Problem Outloud
 Input:
 Output:
 
-Explicit rules;
+Rules From Problem;
 
-Implicit rules:
+Rules from Test Cases;
 
 Clarifying Questions
-
-Examples/Test Cases
 
 Data Structure
 

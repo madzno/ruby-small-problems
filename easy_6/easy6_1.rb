@@ -102,13 +102,13 @@ def dms(integer)
   minutes_with_seconds = get_minutes(integer, degrees)
   minutes = minutes_with_seconds.to_i
   seconds = get_seconds(minutes_with_seconds, minutes)
-  %(#{degrees}#{DEGREE}#{format('%02d', minutes)}'#{format('%02d', seconds)}")
+  %(#{degrees}#{DEGREE}#{format('%.2d', minutes)}'#{format('%.2d', seconds)}")
 end
 
 
-p dms(30) #== %(30°00'00")
-p dms(76.73) #== %(76°43'48")
-p dms(254.6) #== %(254°36'00")
-p dms(93.034773) #== %(93°02'05")
-p dms(0) #== %(0°00'00")
-p dms(360) #== %(360°00'00") || dms(360) == %(0°00'00")
+p dms(30) == %(30°00'00")
+p dms(76.73) == %(76°43'48")
+p dms(254.6) == %(254°36'00")
+p dms(93.034773) == %(93°02'05")
+p dms(0) == %(0°00'00")
+p dms(360) == %(360°00'00") || dms(360) == %(0°00'00")
