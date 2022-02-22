@@ -34,7 +34,6 @@ Algorithim
 =end
 
 def crunch(string)
-  return '' if string.empty?
   characters = string.chars
   result = []
   characters.each_with_index do |char, index|
