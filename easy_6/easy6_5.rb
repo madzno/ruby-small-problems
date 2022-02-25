@@ -35,14 +35,28 @@ def reverse(arr)
   return result_arr if arr.empty?
   index = 0
   loop do
-    last_element = arr.pop
-    result_arr << last_element
-    arr.prepend(last_element)
+    result_arr.prepend(arr[index])
     index += 1
     break if index >= arr.length
   end
   result_arr
 end
+
+=begin
+
+Algo 'each_with_object'
+- input array will be the element called on each with object and argument will
+be an empty array
+- (element, array)
+- for each element in the array, prepend it to the beinning of the result array (reverse order)
+- return the new array
+=end
+
+# def reverse(arr)
+#   arr.each_with_object([]) do |element, array|
+#     array.prepend(element)
+#   end
+# end
 
 p reverse([1,2,3,4]) == [4,3,2,1]          # => true
 p reverse(%w(a b e d c)) == %w(c d e b a)  # => true

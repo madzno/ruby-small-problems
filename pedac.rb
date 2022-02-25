@@ -1,14 +1,13 @@
 =begin
 Read Problem Outloud
-
 Input:
 Output:
 
 Rules From Problem;
 
-Rules from Test Cases;
+Rules From Test Cases;
 
-Clarifying Questions
+Any clarifying Questions?
 
 Data Structure
 
