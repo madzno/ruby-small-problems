@@ -31,6 +31,12 @@ def include?(arr, search_element)
   !arr.empty?
 end
 
+# def include?(arr, search_element)
+#   arr.any? do |element|
+#     search_element == element
+#   end
+# end
+
 p include?([1,2,3,4,5], 3) == true
 p include?([1,2,3,4,5], 6) == false
 p include?([], 3) == false

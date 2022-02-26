@@ -42,9 +42,6 @@ add those elements to the second array
 def halvsies(arr)
   arr1 = []
   arr2 = []
-  result_arr = [arr1, arr2]
-  return result_arr if arr.empty?
-  index = 0
 
   if arr.length.even?
     arr.each_with_index do |element, index|
@@ -64,7 +61,7 @@ def halvsies(arr)
     end
   end
 
-  result_arr
+  [arr1, arr2]
 end
 
 p halvsies([1, 2, 3, 4]) == [[1, 2], [3, 4]]
