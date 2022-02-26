@@ -32,12 +32,8 @@ Algo
 
 def reverse(arr)
   result_arr = []
-  return result_arr if arr.empty?
-  index = 0
-  loop do
-    result_arr.prepend(arr[index])
-    index += 1
-    break if index >= arr.length
+  arr.each do |element|
+    result_arr.prepend(element)
   end
   result_arr
 end
