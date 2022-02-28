@@ -37,6 +37,31 @@ return a string of the words in the results array joined with a space
 #   result_array.join(' ')
 # end
 
+
+=begin
+- define a method word_cap that takes a string as an argument
+- split the string into words
+- iterate through the words array and split each of the string words
+into characters, this is now a multidimensional array containing arrays
+of characters
+- iterate through each sub-array and transform/capitalize the first character element
+of each sub array, each sub array now has a capitalized element at index 0
+- iterate through the words array again and transform each sub array into a string
+using join
+- join the words array with a space
+=end
+def word_cap(string)
+  words_array = string.split
+  words_array.map! do |string|
+    string.chars
+  end
+  words_array.map! do |sub_array|
+    sub_array[0].upcase!
+    sub_array.join
+  end
+  words_array.join(' ')
+end
+
 p word_cap('four score and seven') #== 'Four Score And Seven'
 p word_cap('the javaScript language') #== 'The Javascript Language'
 p word_cap('this is a "quoted" word') #== 'This Is A "quoted" Word'
