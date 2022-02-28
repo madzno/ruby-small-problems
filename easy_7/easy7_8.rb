@@ -25,6 +25,7 @@ def multiply_list(arr1, arr2)
   arr1.each_with_index do |num, index|
     product_arr << (num * arr2[index])
   end
+  product_arr
 end
 
 def multiply_list(arr1, arr2)

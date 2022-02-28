@@ -22,8 +22,8 @@ Algo
 define a method that takes two array's of integers as arguments
 initialize an empty array result_array
 multily the element at each index in the first array by the element
-in each index in the second array
-arr1[index 0.. arr.size - 1] * arr2[index 0 ..arr.size - 1]
+in each index in the second array by iterating through both arrays
+and multiplying the num in array 1 by the num in array 2
 add each of these products to result_array
 sort the result array
 =end
@@ -38,5 +38,12 @@ def multiply_all_pairs(arr1, arr2)
   result_arr.sort
 end
 
+def multiply_all_pairs(arr1, arr2)
+  result_array = arr1.product(arr2)
+  result_array.map! do |sub_array|
+    sub_array.reduce(:*)
+  end
+  result_array.sort
+end
 
 p multiply_all_pairs([2, 4], [4, 3, 1, 2]) == [2, 4, 4, 6, 8, 8, 12, 16]
