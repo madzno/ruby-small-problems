@@ -28,7 +28,7 @@ and add it to result_array
 - join result_array into a string
 =end
 
-def staggered_case(string)
+def uppercase_first(string)
   result_array = []
   string.chars.each_with_index do |char, index|
     if index.even?
@@ -37,9 +37,30 @@ def staggered_case(string)
       result_array << char.downcase
     end
   end
+  result_array
+end
+
+def downcase_first(string)
+  result_array = []
+  string.chars.each_with_index do |char, index|
+    if index.even?
+      result_array << char.downcase
+    else
+      result_array << char.upcase
+    end
+  end
+  result_array
+end
+
+def staggered_case(string, first_case = 'upcase')
+  if first_case == 'downcase'
+    result_array = downcase_first(string)
+  else
+    result_array = uppercase_first(string)
+  end
   result_array.join
 end
 
-p staggered_case('I Love Launch School!') == 'I LoVe lAuNcH ScHoOl!'
-p staggered_case('ALL_CAPS') == 'AlL_CaPs'
-p staggered_case('ignore 77 the 444 numbers') == 'IgNoRe 77 ThE 444 NuMbErS'
+p staggered_case('I Love Launch School!', 'upcase') #== 'I LoVe lAuNcH ScHoOl!'
+p staggered_case('ALL_CAPS', 'downcase') #== 'AlL_CaPs'
+p staggered_case('ignore 77 the 444 numbers') #== 'IgNoRe 77 ThE 444 NuMbErS'
