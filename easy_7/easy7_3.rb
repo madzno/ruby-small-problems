@@ -29,13 +29,13 @@ return a string of the words in the results array joined with a space
 
 =end
 
-# def word_cap(string)
-#   result_array = []
-#   string.split.each do |word|
-#     result_array << word.capitalize
-#   end
-#   result_array.join(' ')
-# end
+def word_cap(string)
+  result_array = []
+  string.split.each do |word|
+    result_array << word.capitalize
+  end
+  result_array.join(' ')
+end
 
 
 =begin
