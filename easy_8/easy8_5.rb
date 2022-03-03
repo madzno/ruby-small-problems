@@ -11,12 +11,8 @@ end
 def palindromes(string)
   substrings = substrings(string)
 
-  substrings.delete_if do |sub_string|
-    sub_string.length < 2
-  end
-
   substrings.select do |sub_string|
-    sub_string == sub_string.reverse
+    sub_string.length >= 2 && sub_string == sub_string.reverse
   end
 end
 
@@ -29,7 +25,7 @@ p palindromes('hello-madam-did-madam-goodbye') == [
   '-madam-', 'madam', 'ada', 'oo'
 ]
 p palindromes('knitting cassettes') == [
-  'nittin', 'itti', 'tt', 'ss', 'settes', 'ette', 'tt'
+  'nittin', 'itti', 'tt', 'ss', 'settes', 'ette', 'tt']
 
 
 ## FURTHER EXPLORATION
