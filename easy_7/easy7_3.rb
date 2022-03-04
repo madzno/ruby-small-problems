@@ -50,6 +50,7 @@ of each sub array, each sub array now has a capitalized element at index 0
 using join
 - join the words array with a space
 =end
+
 def word_cap(string)
   words_array = string.split
   words_array.map! do |string|

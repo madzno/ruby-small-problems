@@ -31,21 +31,15 @@ p palindromes('knitting cassettes') == [
 ## FURTHER EXPLORATION
 
 def substrings(string)
+  alpha_string = string.delete("^a-z", "^A-Z")
   substrings = []
 
-  (0..string.size - 1).each do |starting_index|
-    (starting_index..string.size - 1).each do |ending_index|
-      substrings << string[starting_index..ending_index]
+  (0..alpha_string.size - 1).each do |starting_index|
+    (starting_index..alpha_string.size - 1).each do |ending_index|
+      substrings << alpha_string[starting_index..ending_index]
     end
   end
-
-  substrings_alpha_only = []
-
-  substrings.each do |sub_string|
-    substrings_alpha_only << sub_string.delete("^a-z", "^A-Z")
-  end
-
-  substrings_alpha_only
+  substrings
 end
 
 def palindrome?(string)
