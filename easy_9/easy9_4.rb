@@ -26,6 +26,14 @@ def sequence(integer)
   (1..integer).to_a
 end
 
+def sequence(integer)
+  arr = []
+  1.upto(integer) do |num|
+    arr << num
+  end
+  arr
+end
+
 p sequence(5) == [1, 2, 3, 4, 5]
 p sequence(3) == [1, 2, 3]
 p sequence(1) == [1]
@@ -37,4 +45,12 @@ def sequence(integer)
   (integer..0).to_a
 end
 
-p sequence(-1) == [-1, 0]
+def sequence(integer)
+  arr = []
+  0.downto(integer) do |num|
+    arr << num
+  end
+  arr.reverse
+end
+
+p sequence(-1) #== [-1, 0]

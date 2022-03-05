@@ -44,11 +44,7 @@ def double_number?(integer)
 end
 
 def twice(integer)
-  if double_number?(integer)
-    integer
-  else
-    integer * 2
-  end
+  double_number?(integer) ? integer : integer * 2
 end
 
 p twice(37) == 74
