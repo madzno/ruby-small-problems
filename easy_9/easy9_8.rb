@@ -40,12 +40,9 @@ size
 =end
 
 def sequence(count, multiple)
-  result_array = []
-  if count == 0
-    return result_array
-  else
-    result_array << multiple
-  end
+  return [] if count == 0
+
+  result_array = [multiple]
 
   index = 1
 

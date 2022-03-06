@@ -42,7 +42,8 @@ def word_to_digit(string)
   result_arr = []
   words_arr.each do |word|
     if DIGITS.has_key?(word.delete('^a-z', '^A-Z'))
-      result_arr << DIGITS[word.delete('^a-z', '^A-Z')]
+      result_arr << word.gsub(word.delete('^a-z', '^A-Z'),
+        DIGITS[word.delete('^a-z', '^A-Z')])
     else
       result_arr << word
     end
