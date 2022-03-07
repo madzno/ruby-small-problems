@@ -1,16 +1,20 @@
 =begin
-Read Problem Outloud
+Read problem outlout
+
 Input:
-Output:
+Ouptut:
 
-Rules From Problem;
+Rules from Problems/Test cases
 
-Rules From Test Cases;
 
-Any clarifying Questions?
+Patterns from Test cases
 
 Data Structure
 
+
 Algo
 
+
 =end
+
+
