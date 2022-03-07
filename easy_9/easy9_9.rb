@@ -37,16 +37,11 @@ NUMBER_OF_SCORES = 3
 
 def get_letter_grade(average)
   case
-  when (90..100).include?(average)
-    'A'
-  when (80...90).include?(average)
-    'B'
-  when (70...80).include?(average)
-    'C'
-  when (60...70).include?(average)
-    'D'
-  when (0...60).include?(average)
-    'F'
+  when (90..100).include?(average) then 'A'
+  when (80...90).include?(average) then 'B'
+  when (70...80).include?(average) then 'C'
+  when (60...70).include?(average) then 'D'
+  when (0...60).include?(average)  then 'F'
   end
 end
 
