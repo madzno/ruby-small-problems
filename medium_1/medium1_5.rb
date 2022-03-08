@@ -23,23 +23,31 @@ stop iterating when stars is equal to input integer
 
 =end
 
+def output_first_half(integer)
+  stars = 1
+  spaces = integer - 1
+  loop do
+    puts "#{' ' * (spaces / 2)} #{'*' * (stars)} #{' ' * (spaces / 2)}"
+    stars += 2
+    spaces -= 2
+    break if stars > integer
+  end
+end
+
+def output_second_half(integer)
+  stars = integer - 2
+  spaces = 2
+  loop do
+    break if stars < 1
+    puts "#{' ' * (spaces / 2)} #{'*' * (stars)} #{' ' * (spaces / 2)}"
+    stars -= 2
+    spaces += 2
+  end
+end
+
 def diamond(integer)
-  up_stars = 1
-  up_spaces = integer - 1
-  loop do
-    puts "#{' ' * (up_spaces / 2)} #{'*' * (up_stars)} #{' ' * (up_spaces / 2)}"
-    up_stars += 2
-    up_spaces -= 2
-    break if up_stars > integer
-  end
-  down_stars = integer - 2
-  down_spaces = 2
-  loop do
-    break if down_stars < 1
-    puts "#{' ' * (down_spaces / 2)} #{'*' * (down_stars)} #{' ' * (down_spaces / 2)}"
-    down_stars -= 2
-    down_spaces += 2
-  end
+  output_first_half(integer)
+  output_second_half(integer)
 end
 
 diamond(1)
