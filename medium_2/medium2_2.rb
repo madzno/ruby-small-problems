@@ -25,48 +25,35 @@ an array
 
 Algo
 
-initialize a constant PAIRS to a hash with all alphabet letters
-as keys and their corresponding pairs as values
+initialize a constant PAIRS to a multidimensional array with each sub array containing
+the two characters for each of the pairs shown in the list
 
 define a method block_word? that takes a string as an argument
 
-iterate through the string by character and look up the hash value
-associated with that character's key if the rest of the string includes
-that character, return false
+upcase the characters in the string and
+split the string into characters and assign the return value to a variable characters
+
+iterate through the PAIRS multidimensional array, if for any of the pairs the characters
+array returns true for including both the character at index 0 and the character at index 1,
+return false from the method
 
 otherwise return true
 
 =end
 
-PAIRS = {
-          'B' => 'O',
-          'O' => 'B',
-          'X' => 'K',
-          'K' => 'X',
-          'D' => 'Q',
-          'Q' => 'D',
-          'C' => 'P',
-          'P' => 'C',
-          'N' => 'A',
-          'A' => 'N',
-          'G' => 'T',
-          'T' => 'G',
-          'R' => 'E',
-          'E' => 'R',
-          'F' => 'S',
-          'S' => 'F',
-          'J' => 'W',
-          'W' => 'J',
-          'H' => 'U',
-          'U' => 'H',
-          'V' => 'I',
-          'I' => 'V',
-          'L' => 'Y',
-          'Y' => 'L',
-          'Z' => 'M',
-          'M' => 'Z'
-          }
+PAIRS = [['B', 'O'], ['X', 'K'], ['D', 'Q'], ['C', 'P'], ['N', 'A'], ['G', 'T'], ['R', 'E'],
+['F', 'S'], ['J', 'W'], ['H', 'U'], ['V', 'I'], ['L', 'Y'], ['Z', 'M']]
 
-block_word?('BATCH') == true
-block_word?('BUTCH') == false
-block_word?('jest') == true
+def block_word?(string)
+  characters = string.upcase.chars
+  PAIRS.each do |pair|
+    if characters.include?(pair[0]) && characters.include?(pair[1])
+      return false
+    end
+  end
+  true
+end
+
+p block_word?('BATCH') == true
+p block_word?('BUTCH') == false
+p block_word?('jest') == true
