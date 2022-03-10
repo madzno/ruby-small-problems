@@ -46,16 +46,17 @@ def fibonacci_last(integer)
   fibonacci = [1, 1]
   index = 2
   loop do
-    break if index >= integer
     num = fibonacci[index - 1] + fibonacci[index - 2]
     fibonacci << num
     index += 1
+    break if index >= integer
   end
   fibonacci.map! { |digit| digit.to_s }
   fibonacci[-1][-1].to_i
 end
 
 p fibonacci_last(15) == 0
+p fibonacci_last(2) == 2
 p fibonacci_last(20) == 5
 p fibonacci_last(100) == 5
 

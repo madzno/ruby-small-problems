@@ -131,7 +131,7 @@ return the on_light_indexes array
 =end
 def initialize_lights(n)
    lights = []
-  n.times do |boolean|
+  n.times do
     lights << true
   end
   lights
